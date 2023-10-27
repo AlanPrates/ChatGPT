@@ -12,4 +12,4 @@ Atualmente, não damos suporte para macOS
 
 ## Autor
 
-Você pode me encontrar no Twitter como [@AlanInvasion](https://twitter.com/AlanInvasion).
+Você pode me encontrar como @AlanInvasion
