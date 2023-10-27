@@ -1,4 +1,4 @@
-# ChatGPT para Desktop Windows
+# ChatGPT para Desktop Windows e linux
 
 Este é um aplicativo simples que permite usar o ChatGPT diretamente no seu windows.
 
