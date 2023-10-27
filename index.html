@@ -11,7 +11,7 @@
       webview { width: 100%; height: 100%; border: none; }
     </style>
   </head>
-  <body id="body">
+  <body>
     <div class="page">
       <webview id="webview" src="https://chat.openai.com/chat" autosize="on"></webview>
     </div>
@@ -23,6 +23,15 @@ window.api = {
     ipcRenderer.send(channel, data);
   },
 };
+
+      function toggleTheme() {
+  const body = document.getElementById('body');
+  body.classList.toggle('dark-mode');
+
+  // Atualize o tema quando o usuário alternar
+  const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+  window.api.send('toggle-theme', theme); // Envie o tema para o processo principal
+}
 
       const webview = document.getElementById('webview');
       webview.addEventListener('dom-ready', function() {
