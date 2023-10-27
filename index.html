@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,11 +11,19 @@
       webview { width: 100%; height: 100%; border: none; }
     </style>
   </head>
-  <body>
+  <body id="body">
     <div class="page">
       <webview id="webview" src="https://chat.openai.com/chat" autosize="on"></webview>
     </div>
     <script>
+      const { ipcRenderer } = require('electron');
+
+window.api = {
+  send: (channel, data) => {
+    ipcRenderer.send(channel, data);
+  },
+};
+
       const webview = document.getElementById('webview');
       webview.addEventListener('dom-ready', function() {
         webview.insertCSS(`
@@ -26,6 +35,7 @@
         `);
         webview.executeJavaScript(`document.querySelector("[class*='shared__Wrapper']").innerHTML += "<h3>Start by asking anything.</h3>"`);
       });
+
     </script>
   </body>
 </html>
