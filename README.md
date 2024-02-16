@@ -1,7 +1,9 @@
-# Gemini para Desktop Windows, MacOS e linux
+# ChatGPT para Desktop Windows e linux
 
-Este é um aplicativo simples que permite usar o Gemini diretamente no seu windows, MacOS e Ubuntu.
+Este é um aplicativo simples que permite usar o ChatGPT diretamente no seu windows.
 
+
+Atualmente, não damos suporte para macOS
 
 <p align="center">
   <img src="./images/print.png" width="700">

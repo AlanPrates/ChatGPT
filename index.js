@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu, shell, clipboard } = require('electron');
+const { app, BrowserWindow, Menu, shell } = require('electron');
 const path = require('path');
 
 let mainWindow;
@@ -13,6 +13,12 @@ app.whenReady().then(() => {
     }
   });
 
+  mainWindow.loadFile(path.join(__dirname, 'index.html'));
+
+  // Desabilita o menu padrão do Electron
+  Menu.setApplicationMenu(null);
+
+  // Cria um novo menu personalizado
   const menuTemplate = [
     {
       label: 'Ações',
@@ -28,40 +34,14 @@ app.whenReady().then(() => {
           click: () => {
             shell.openExternal('https://github.com/AlanPrates');
           }
-        },
-        {
-          label: 'Editar',
-          submenu: [
-            {
-              label: 'Copiar',
-              accelerator: 'CmdOrCtrl+C',
-              click: () => mainWindow.webContents.copy()
-            },
-            {
-              label: 'Colar',
-              accelerator: 'CmdOrCtrl+V',
-              click: () => mainWindow.webContents.paste()
-            },
-            {
-              label: 'Recortar',
-              accelerator: 'CmdOrCtrl+X',
-              click: () => mainWindow.webContents.cut()
-            },
-            {
-              label: 'Selecionar Tudo',
-              accelerator: 'CmdOrCtrl+A',
-              click: () => mainWindow.webContents.selectAll()
-            }
-          ]
         }
       ]
     }
   ];
 
+  // Cria o menu a partir do template
   const menu = Menu.buildFromTemplate(menuTemplate);
   Menu.setApplicationMenu(menu);
-
-  mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
   mainWindow.webContents.on('dom-ready', () => {
     mainWindow.webContents.insertCSS(`

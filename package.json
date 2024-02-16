@@ -1,8 +1,8 @@
 {
-  "name": "Gemini",
-  "productName": "Gemini",
+  "name": "chatgpt",
+  "productName": "chatGPT",
   "version": "0.0.1",
-  "description": "Gemini",
+  "description": "chatGPT",
   "main": "index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -14,7 +14,7 @@
     "package-linux": "electron-builder --linux",
     "postinstall": "electron-builder install-app-deps"
   },
-  "keywords": ["gemini", "IA", "Google", "MacOS"],
+  "keywords": ["chatgpt", "openai", "Ubuntu", "Windows"],
   "author": {
     "name": "Alan Prates",
     "email": "alan_invasion@hotmail.com"
@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AlanPrates/Gemini"
+    "url": "https://github.com/AlanPrates/chatGPT"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.4",
@@ -44,7 +44,7 @@
     "electron-squirrel-startup": "^1.0.0"
   },
   "build": {
-    "appId": "com.alanprates.gemini",
+    "appId": "com.alanprates.chatgpt",
     "win": {
       "icon": "images/icon.png"
     },
